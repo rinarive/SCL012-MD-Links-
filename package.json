@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-   
   },
   "repository": {
     "type": "git",
@@ -21,8 +20,14 @@
   },
   "homepage": "https://github.com/rinarive/SCL012-MD-Links-#readme",
   "dependencies": {
+    "bl": "^4.0.0",
+    "colors": "^1.4.0",
+    "http": "0.0.0",
     "https": "^1.0.0",
+    "jest": "^25.1.0",
     "marked": "^0.8.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "npm": "^6.13.7",
+    "through2-map": "^3.0.0"
   }
 }
