@@ -7,7 +7,7 @@ if(process.argv.length < 3) {
   return;
 };
 
-let mdLinks = {
+const mdLinks = {
 
   validatePath : myPath => {
     try {
@@ -15,9 +15,7 @@ let mdLinks = {
       if (isAbsolute === false) {
         return mdLinks.convertToAbsolutePath(myPath); 
       } else if (isAbsolute === true) {
-        return myPath.send({
-          message : "soy el archivo"
-        });
+        return myPath
       }
     } catch (error) {
       console.error(error, 'No se puede verificar el archivo');
@@ -65,7 +63,11 @@ let mdLinks = {
       if (fileExt === '.md') {
         fs.readFile(file, 'utf8', (err, data) => {
           if (err) reject(err);
-          data = data.split('\n').map((element, index) => mdLinks.markdownLinkExtractor(file, element, index + 1)).filter(element => element.length !== 0).reduce((value1, value2) => value1.concat(value2));
+          data = data.split('\n').map((element, index) => 
+          mdLinks.markdownLinkExtractor(file, element, index + 1))
+          .filter(element => 
+            element.length !== 0).reduce((value1, value2) => 
+            value1.concat(value2));
           
           resolve(console.log(data));
   
@@ -83,7 +85,6 @@ let mdLinks = {
         href: href,
         text: text,
         file: file,
-       
       });
     };
   

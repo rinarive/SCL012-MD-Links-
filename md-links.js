@@ -1,10 +1,13 @@
 const mdLinks = require('./index');
 const myPath = process.argv[2];
+let options = {
+  validate: Boolean,
+  stats : Boolean
+}
 if(process.argv.length < 3) {
   console.log('Por favor ingrese un archivo .md');
   return;
 };
-
 
 mdLinks = (myPath, options) => {
   return new Promise((resolve, reject) => {
