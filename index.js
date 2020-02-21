@@ -2,10 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const Marked = require('marked');
 const myPath = process.argv[2];
-if(process.argv.length < 3) {
-  console.log('Por favor ingrese un archivo .md');
-  return;
-};
+
 
 const mdLinks = {
 
